@@ -38,12 +38,18 @@ G = nx.DiGraph()
 for c in cases:
   #print cases[c].id_num
 
-  G.add_node(cases[c].id_num)
+  #G.add_node(cases[c].id_num)
   # Uses case numbers as nodes. Maybe we should use case objects?
+  G.add_node(cases[c])
 
   #print cases[c].citations
   for k in cases[c].citations:
-    G.add_edge(cases[c].id_num,k)
+    if k in cases:
+      G.add_edge(cases[c],cases[k])
+    else:
+      print 'oops! Tried to draw an edge to a case that does not exist yet.'
 
-G.nodes()
-G.edges()
+test = cases['202']
+print test
+#G.edges()
+
