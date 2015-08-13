@@ -47,9 +47,13 @@ for c in cases:
     if k in cases:
       G.add_edge(cases[c],cases[k])
     else:
-      print 'oops! Tried to draw an edge to a case that does not exist yet.'
+      #print 'oops! Tried to draw an edge to a case that does not exist yet.'
 
-test = cases['202']
-print test
+#G.nodes()
 #G.edges()
 
+#G.degree(cases['202'])
+
+#################################################################
+
+import matplotlib.pyplot as plt
