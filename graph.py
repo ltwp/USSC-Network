@@ -30,8 +30,6 @@ for line in fin:
     case = cases[citing[3]]
     case.citations.append(cited[3])
 
-#################################################################
-
 import networkx as nx
 G = nx.DiGraph()
 
@@ -48,12 +46,13 @@ for c in cases:
       G.add_edge(cases[c],cases[k])
     else:
       #print 'oops! Tried to draw an edge to a case that does not exist yet.'
+      ding = 0
 
 #G.nodes()
 #G.edges()
 
 #G.degree(cases['202'])
 
-#################################################################
-
 import matplotlib.pyplot as plt
+nx.draw(G)
+plt.show()
